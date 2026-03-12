@@ -1,0 +1,14 @@
+<nav class="main-nav">
+  <a href="/" class="logo">linkr</a>
+  <div class="nav-links">
+    <% if (locals.currentUser) { %>
+      <a href="/dashboard" class="btn btn-ghost btn-sm">Dashboard</a>
+      <form action="/logout" method="POST" style="display:inline">
+        <button class="btn btn-ghost btn-sm">Log out</button>
+      </form>
+    <% } else { %>
+      <a href="/login" class="btn btn-ghost btn-sm">Log in</a>
+      <a href="/register" class="btn btn-primary btn-sm">Sign up</a>
+    <% } %>
+  </div>
+</nav>
