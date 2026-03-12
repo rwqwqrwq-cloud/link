@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — linkr</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<%- include('partials/nav') %>
+<main class="auth-main">
+  <div class="auth-card">
+    <h2>Welcome back</h2>
+    <p class="auth-sub">Log in to manage your profile.</p>
+    <% if (error) { %><div class="alert alert-error"><%= error %></div><% } %>
+    <form action="/login" method="POST" class="auth-form">
+      <div class="field-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@email.com" required autocomplete="email">
+      </div>
+      <div class="field-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Your password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Log in →</button>
+    </form>
+    <p class="auth-switch">Don't have an account? <a href="/register">Sign up free</a></p>
+  </div>
+</main>
+</body>
+</html>
